@@ -3,20 +3,15 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
-)
 
-//TODO move all structs to /clean/internal/structs/...
-type responseStruct struct {
-	Code    int         `json:"code"`
-	Payload interface{} `json:"payload"`
-	Message string      `json:"message"`
-}
+	"github.com/burhon94/clean/internal/structs"
+)
 
 //Here only http-Req-Resp-logic
 func HandlerPing(w http.ResponseWriter, r *http.Request) {
 	//if have business logic realised it to /clean/internal/bizLogic
 
-	var resp = responseStruct{
+	var resp = structs.Response{
 		Code:    202,
 		Payload: "pong",
 		Message: "Success",

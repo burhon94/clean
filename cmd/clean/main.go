@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/burhon94/clean/cmd/clean/router"
 	"log"
 	"net/http"
+
+	"github.com/burhon94/clean/cmd/clean/router"
 )
 
 func main() {

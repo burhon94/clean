@@ -1,8 +1,9 @@
 package router
 
 import (
-	"github.com/burhon94/clean/cmd/clean/handlers"
 	"net/http"
+
+	"github.com/burhon94/clean/cmd/clean/handlers"
 )
 
 func InitRouter(prefix string) *http.ServeMux {
@@ -13,5 +14,3 @@ func InitRouter(prefix string) *http.ServeMux {
 
 	return newServeMux
 }
-
-
