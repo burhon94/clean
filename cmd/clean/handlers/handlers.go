@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"encoding/json"
+	"github.com/burhon94/clean/pkg/reply"
 	"net/http"
 
 	"github.com/burhon94/clean/internal/structs"
@@ -17,13 +17,5 @@ func HandlerPing(w http.ResponseWriter, r *http.Request) {
 		Message: "Success",
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-
-	data, err := json.Marshal(resp)
-	if err != nil {
-		w.WriteHeader(500)
-		return
-	}
-
-	w.Write(data)
+	defer reply.ReplyJSON(w, &resp)
 }
